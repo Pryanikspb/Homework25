@@ -20,8 +20,11 @@ public class EmployeeService {
         this.employees = new ArrayList<>();
     }
 
-    public Employee add(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
+    public Employee add(String firstName,
+                        String lastName,
+                        int department,
+                        double salary) {
+        Employee employee = new Employee(firstName, lastName, department, salary);
         if (employees.contains(employee)) {
             throw new EmployeeAlreadyAddedException();
         }
@@ -32,8 +35,11 @@ public class EmployeeService {
         return employee;
     }
 
-    public Employee remove(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
+    public Employee remove(String firstName,
+                           String lastName,
+                           int department,
+                           double salary) {
+        Employee employee = new Employee(firstName, lastName, department, salary);
         if (employees.contains(employee)) {
             employees.remove(employee);
             return employee;
@@ -42,8 +48,11 @@ public class EmployeeService {
     }
 
 
-    public Employee find(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
+    public Employee find(String firstName,
+                         String lastName,
+                         int department,
+                         double salary) {
+        Employee employee = new Employee(firstName, lastName, department, salary);
         if (employees.contains(employee)) {
             return employee;
         }

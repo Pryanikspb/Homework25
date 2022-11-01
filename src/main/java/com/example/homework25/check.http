@@ -1,0 +1,3 @@
+http://localhost:8080/employee/add?firstName=Ivan&lastName=Tinkoff&salary=100000&departmentId=1
+
+http://localhost:8080/departments/all?departmentId=1
