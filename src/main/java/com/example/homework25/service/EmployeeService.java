@@ -16,7 +16,11 @@ public class EmployeeService {
 
     private final List<Employee> employees;
 
-    public EmployeeService() {
+    private final ValidatorService validatorService;
+
+
+    public EmployeeService(ValidatorService validatorService) {
+        this.validatorService = validatorService;
         this.employees = new ArrayList<>();
     }
 
@@ -24,7 +28,11 @@ public class EmployeeService {
                         String lastName,
                         int department,
                         double salary) {
-        Employee employee = new Employee(firstName, lastName, department, salary);
+        Employee employee = new Employee(
+                validatorService.validate(firstName),
+                validatorService.validate(lastName),
+                department,
+                salary);
         if (employees.contains(employee)) {
             throw new EmployeeAlreadyAddedException();
         }
