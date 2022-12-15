@@ -10,4 +10,5 @@ class Homework25ApplicationTests {
 	void contextLoads() {
 	}
 
+
 }
